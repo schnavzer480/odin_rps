@@ -31,12 +31,20 @@ else if (choice == 3) {
 
 
 function getComputerChoice() {
-
     const choices = ["Rock", "Paper", "Scissors"];
-
     const randomIndex = Math.floor(Math.random() * choices.length);
-
     return choices[randomIndex];
 }
 
-console.log(getComputerChoice());
+
+
+let greeting = "Rock, Paper or Scissors";
+function getHumanChoice(greeting) {
+    return prompt("Let's play!", greeting);
+}
+let humanChoice = getHumanChoice(greeting);
+
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound() {}
