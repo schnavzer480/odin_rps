@@ -30,21 +30,50 @@ else if (choice == 3) {
 
 
 
+
+
+//1
 function getComputerChoice() {
-    const choices = ["Rock", "Paper", "Scissors"];
+    const choices = ["rock", "paper", "scissors"];
     const randomIndex = Math.floor(Math.random() * choices.length);
     return choices[randomIndex];
 }
 
-
-
-let greeting = "Rock, Paper or Scissors";
+//2
 function getHumanChoice(greeting) {
-    return prompt("Let's play!", greeting);
+    let humanChoice = prompt("Let's play!", greeting);
+    return humanChoice.toLowerCase();
 }
-let humanChoice = getHumanChoice(greeting);
 
+
+//3
 let humanScore = 0;
 let computerScore = 0;
 
-function playRound() {}
+
+
+//4
+
+function playRound(humanChoice, computerChoice) {
+    humanChoice = humanChoice.toLowerCase();
+
+
+    if (humanChoice === computerChoice) {
+        console.log("It's a Thai!");
+    }
+    else if (
+        (humanChoice === "rock" && computerChoice === "scissors") ||
+        (humanChoice === "paper" && computerChoice === "rock") ||
+        (humanChoice === "scissors" && computerChoice === "paper")
+    ) {
+        console.log("You won!");
+        humanScore++;
+    }
+    else {
+        console.log("You lost!");
+        computerScore++;
+    }
+}
+let humanChoice = getHumanChoice();
+let computerChoice = getComputerChoice();
+playRound(humanChoice, computerChoice);
