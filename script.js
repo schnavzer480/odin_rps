@@ -53,7 +53,6 @@ let computerScore = 0;
 
 
 //4
-
 function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
 
