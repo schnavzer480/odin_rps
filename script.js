@@ -32,27 +32,29 @@ else if (choice == 3) {
 
 
 
-//1
+//STEP 2
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
     const randomIndex = Math.floor(Math.random() * choices.length);
     return choices[randomIndex];
 }
 
-//2
+//STEP 3
 function getHumanChoice(greeting) {
     let humanChoice = prompt("Let's play!", greeting);
     return humanChoice.toLowerCase();
 }
 
 
-//3
+//STEP 6
+function playGame() {
+    //STEP 4
 let humanScore = 0;
 let computerScore = 0;
 
 
 
-//4
+//STEP 5
 function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
 
@@ -72,7 +74,25 @@ function playRound(humanChoice, computerChoice) {
         console.log("You lost!");
         computerScore++;
     }
+    console.log(`Scores - You: ${humanScore}, Computer: ${computerScore}`);
 }
-let humanChoice = getHumanChoice();
-let computerChoice = getComputerChoice();
-playRound(humanChoice, computerChoice);
+
+
+//5 ROUNDS
+for (let i = 0; i < 5; i++) {
+    console.log(`Round ${i + 1}`);
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+}
+
+if (humanScore > computerScore) {
+    console.log("Congratulations! You won the game!");
+} else if (humanScore < computerScore) {
+    console.log("You lost, bitch!");
+} else {
+    console.log("The game is a Thai!");
+}
+}
+
+playGame();
