@@ -40,14 +40,15 @@ function getComputerChoice() {
 }
 
 //STEP 3
-function getHumanChoice(greeting) {
-    let humanChoice = prompt("Let's play!", greeting);
+function getHumanChoice() {
+    let humanChoice = prompt("Let's play! Type 'rock', 'paper' or 'scissors'");
     return humanChoice.toLowerCase();
 }
 
 
 //STEP 6
 function playGame() {
+
     //STEP 4
 let humanScore = 0;
 let computerScore = 0;
@@ -87,9 +88,9 @@ for (let i = 0; i < 5; i++) {
 }
 
 if (humanScore > computerScore) {
-    console.log("Congratulations! You won the game!");
+    console.log("You won the game!");
 } else if (humanScore < computerScore) {
-    console.log("You lost, bitch!");
+    console.log("You lost the game!");
 } else {
     console.log("The game is a Thai!");
 }
